@@ -1,10 +1,11 @@
 
-
 function Index() {
     return (
-        <div> Homepage</div>
+        <div>
+            Welcome to IrQuality, for your health
+        </div>
+
     )
 }
-
 
 export default Index;
