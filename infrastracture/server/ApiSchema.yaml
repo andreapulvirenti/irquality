@@ -21,12 +21,26 @@ schemes:
 - "https"
 - "http"
 definitions:
+  Tag:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+        format: "int64"
+      name:
+        type: "string"
+    xml:
+      name: "Tag"
   Zone:
+    xml:
+      name: "Zone"
     type: "object"
     required:
     - "name"
     - "latitude"
     - "longitude"
+    - "isoCode"
+    - "isoCulture"
     properties:
       id:
         type: "integer"
@@ -36,8 +50,33 @@ definitions:
         example: "Roma"
       latitude:
         type: "string"
+        example: "41.90334548792194"
         xml:
-          name: "photoUrl"
+          name: "latitude"
+          wrapped: true
+        items:
+          type: "string"
+      longitude:
+        type: "string"
+        example: "12.483160479675"
+        xml:
+          name: "longitude"
+          wrapped: true
+        items:
+          type: "string"
+      isoCode: 
+        type: "string"
+        example: "it"
+        xml:
+          name: "isoCode"
+          wrapped: true
+        items:
+          type: "string"
+      isoCulture: 
+        type: "string"
+        example: "IT"
+        xml:
+          name: "isoCulture"
           wrapped: true
         items:
           type: "string"
@@ -48,36 +87,48 @@ definitions:
           wrapped: true
         items:
           $ref: "#/definitions/Tag"
-      status:
-        type: "string"
-        description: "pet status in the store"
-        enum:
-        - "available"
-        - "pending"
-        - "sold"
-    xml:
-      name: "Pet"
+          
 paths:
   /zone:
     post:
-        tags: 
-        - "zone"
-        summary: "Add a new zone to monitor air quality"
-        description: ""
-        operationId: "addZone"
-        consumes:
-        - "application/json"
-        - "application/xml"
-        produces:
-        - "application/xml"
-        - "application/json"
-        parameters:
-        - in: "body"
-          name: "body"
-          description: "Zone object to storage"
-          required: true
-          schema:
-            $ref: "#/definitions/Zone"
-        responses:
-          "405":
-            description: "Invalid input"
+      tags: 
+      - "zone"
+      summary: "Add a new zone to monitor air quality"
+      description: "Add new zone to monitor air qiuality in that zone"
+      operationId: "addZone"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Zone object to storage"
+        required: true
+        schema:
+          $ref: "#/definitions/Zone"
+      responses:
+        "405":
+          description: "Invalid input"
+    get: 
+      tags: 
+      - "zone"
+      summary: "Get Zones"
+      description: "Get zones"
+      operationId: "getZones"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      responses: 
+        "404": 
+          description: "NO ZONES HAS BEEN SAVED"
+      
+      
+      
+      
+      
