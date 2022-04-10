@@ -1,4 +1,4 @@
-import { Zone } from "../../models/zone"
+import { Zone } from "@models/zone"
 
 type Props = {
     item?: Zone
@@ -8,7 +8,6 @@ type Props = {
 
 export default function getZoneById({ zone }: { zone: Zone }) {
     return (
-
         <div>details </div>
     )
 }

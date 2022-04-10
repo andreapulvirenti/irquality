@@ -12,4 +12,5 @@ export type Zone = {
   export type Tag = {
       id: number
       name: string
+      zoneId: number
   }
