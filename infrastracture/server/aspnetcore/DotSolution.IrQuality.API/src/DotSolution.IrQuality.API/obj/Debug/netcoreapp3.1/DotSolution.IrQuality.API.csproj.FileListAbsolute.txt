@@ -27,3 +27,4 @@ D:\My Projects\I-rQuality\infrastracture\server\aspnetcore\DotSolution.IrQuality
 D:\My Projects\I-rQuality\infrastracture\server\aspnetcore\DotSolution.IrQuality.API\src\DotSolution.IrQuality.API\obj\Debug\netcoreapp3.1\DotSolution.IrQuality.API.dll
 D:\My Projects\I-rQuality\infrastracture\server\aspnetcore\DotSolution.IrQuality.API\src\DotSolution.IrQuality.API\obj\Debug\netcoreapp3.1\DotSolution.IrQuality.API.pdb
 D:\My Projects\I-rQuality\infrastracture\server\aspnetcore\DotSolution.IrQuality.API\src\DotSolution.IrQuality.API\obj\Debug\netcoreapp3.1\DotSolution.IrQuality.API.genruntimeconfig.cache
+D:\My Projects\I-rQuality\infrastracture\server\aspnetcore\DotSolution.IrQuality.API\src\DotSolution.IrQuality.API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll

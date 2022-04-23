@@ -31,20 +31,34 @@ namespace DotSolution.IrQuality.API.Controllers
         /// <summary>
         /// Add a new zone to monitor air quality
         /// </summary>
-        
+        /// <remarks>Add new zone to monitor air qiuality in that zone</remarks>
         /// <param name="body">Zone object to storage</param>
         /// <response code="405">Invalid input</response>
         [HttpPost]
         [Route("/v2/zone")]
         [ValidateModelState]
         [SwaggerOperation("AddZone")]
-        public virtual IActionResult AddZone([FromBody]Tag body)
+        public virtual IActionResult AddZone([FromBody]Zone body)
         { 
             //TODO: Uncomment the next line to return response 405 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
-            // return StatusCode(405);
+            return StatusCode(405);
 
+        }
 
-            throw new NotImplementedException();
+        /// <summary>
+        /// Get Zones
+        /// </summary>
+        /// <remarks>Get zones</remarks>
+        /// <response code="404">NO ZONES HAS BEEN SAVED</response>
+        [HttpGet]
+        [Route("/v2/zone")]
+        [ValidateModelState]
+        [SwaggerOperation("GetZones")]
+        public virtual IActionResult GetZones()
+        { 
+            //TODO: Uncomment the next line to return response 404 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
+            return StatusCode(404);
+
         }
     }
 }
