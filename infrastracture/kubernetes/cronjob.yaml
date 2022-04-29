@@ -1,0 +1,32 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: cronjob
+spec:
+  jobTemplate:
+    metadata:
+      name: cronjob
+    spec:
+      backoffLimit: 3
+      template:
+        metadata:
+         annotations:
+           scope: "Update static site generation"
+        spec:
+          volumes: 
+          - name: ssg-data
+            persistentVolumeClaim:
+              claimName: ssg-pvc
+          containers:
+          - image: docker.io/pulvy91/irquality.next:latest
+            name: cronjob-ssg
+            resources: {}
+            command: ["/bin/sh", "-c"]
+            args: ["cp -r /app/.next/server/pages/* /data"]
+            imagePullPolicy: IfNotPresent
+            volumeMounts:
+            - mountPath: /data
+              name: ssg-data
+          restartPolicy: OnFailure
+  schedule: "* * * * *"
+status: {}

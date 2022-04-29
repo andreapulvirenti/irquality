@@ -1,0 +1,1 @@
+minikube mount /temp/data:/data
