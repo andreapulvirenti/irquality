@@ -1,7 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/next/irquality/node_modules
+/src/irquality/next/node_modules
 /.pnp
 .pnp.js
 
@@ -9,7 +9,7 @@
 /coverage
 
 # next.js
-/next/irquality/.next/
+/src/irquality/next/.next/
 /out/
 
 # production
