@@ -7,8 +7,14 @@ type Props = {
 
 
 export default function getZoneById({ zone }: { zone: Zone }) {
+    const response = fetch("https://api.waqi.info/feed/here/?token=7f7dd31fdbcc13a8199017163fa476048599ae22")
     //https://api.waqi.info/feed/here/?token=7f7dd31fdbcc13a8199017163fa476048599ae22
+
     return (
-        <div>details </div>
+        <>
+            <h3> Air Quality data in your zone</h3>
+        
+            
+        </>
     )
 }

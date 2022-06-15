@@ -1,4 +1,7 @@
 
+import { useRouter } from 'next/router';
+
+
 function Index() {
     return (
         <div>

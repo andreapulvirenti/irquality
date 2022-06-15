@@ -16,7 +16,9 @@ const Zones = ({ zones }: Props) => {
             {
                 zones.map((zone) => {
                     return (
-                        <li> {zone.name}</li>
+                        <li> 
+                            
+                            {zone.name}</li>
                     )
                 })
             }
