@@ -1,12 +1,16 @@
 
+import Layout from '@/layout/layout';
+import { Main } from 'next/document';
 import { useRouter } from 'next/router';
 
 
 function Index() {
     return (
-        <div>
-            Welcome to IrQuality, for your health
-        </div>
+        <>
+          <Layout >
+            <p> bla bla </p>
+          </Layout>
+        </>
 
     )
 }
