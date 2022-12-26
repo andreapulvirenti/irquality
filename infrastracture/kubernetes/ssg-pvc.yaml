@@ -2,6 +2,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: ssg-pvc
+  namespace: irquality
 spec:
   resources:
     requests:

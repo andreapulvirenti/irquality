@@ -1,4 +1,7 @@
 import { Zone } from "@models/zone"
+import { 
+    Link 
+} from 'react-router-dom';
 
 type Props = {
     item?: Zone
@@ -13,8 +16,16 @@ export default function getZoneById({ zone }: { zone: Zone }) {
     return (
         <>
             <h3> Air Quality data in your zone</h3>
-        
-            
+            <p>
+                Name: {zone.name}
+            </p>
+            <p>
+                latitude: {zone.latittude} 
+                longitude: {zone.longitude}
+            </p>
+            <div>
+                <Link to={zone.id.toString()}>{zone.name}</Link>
+            </div>
         </>
     )
 }

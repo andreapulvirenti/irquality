@@ -1,7 +1,8 @@
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: cronjob
+  name: cronjob-copier
+  namespace: irquality
 spec:
   jobTemplate:
     metadata:
@@ -23,6 +24,8 @@ spec:
             resources: {}
             command: ["/bin/sh", "-c"]
             args: ["cp -r /app/.next/server/pages/* /data"]
+            securityContext:
+              runAsUser: 0
             imagePullPolicy: IfNotPresent
             volumeMounts:
             - mountPath: /data
